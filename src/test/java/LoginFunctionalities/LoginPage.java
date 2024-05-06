@@ -1,3 +1,6 @@
+package LoginFunctionalities;
+
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,13 +24,19 @@ public class LoginPage {
             PageFactory.initElements(driver, this);
         }
 
-        public void doLogin(String username, String password) {
+        public void doLogin(String username, String password) throws InterruptedException {
+            txtUsername.sendKeys(Keys.CONTROL + "a");
+            txtUsername.sendKeys(Keys.DELETE);
             txtUsername.sendKeys(username);
+            txtPassword.sendKeys(Keys.CONTROL + "a");
+            txtPassword.sendKeys(Keys.DELETE);
             txtPassword.sendKeys(password);
+            Thread.sleep(500);
             loginButton.click();
+            Thread.sleep(500);
         }
 
-        public void doLogout(){
-            logoutButton.click();
-        }
+//        public void doLogout(){
+//            logoutButton.click();
+//        }
 }
