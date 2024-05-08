@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Random;
+
 public class CreateCompanyTestRunner extends Setup{
     LoginPage loginPage;
     @Test(priority = 1)
@@ -19,15 +21,23 @@ public class CreateCompanyTestRunner extends Setup{
         Assert.assertEquals(logoutButtonHeaderActual5, logoutButtonHeaderExpected5);
     }
 
+    public static String generateRandomNumber(int len) {
+        String num = "0123456789";
+        Random rnd = new Random();
+        StringBuilder sb = new StringBuilder(len);
+        for (int i = 0; i < len; i++)
+            sb.append(num.charAt(rnd.nextInt(num.length())));
+        return sb.toString();
+    }
+
     CreateCompany createCompany;
     @Test(priority = 2)
     public void createCompanyTest() throws InterruptedException {
         createCompany = new CreateCompany(driver);
-        createCompany.doCreateCompany();
-        Thread.sleep(2000);
+        createCompany.doCreateCompany("Bus Company-"+generateRandomNumber(3));
+        Thread.sleep(1000);
         WebElement searchBtn = driver.findElement(By.xpath("//span[normalize-space()='Search']"));
         searchBtn.isDisplayed();
     }
-
 
 }

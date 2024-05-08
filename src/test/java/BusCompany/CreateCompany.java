@@ -58,12 +58,12 @@ public class CreateCompany {
         PageFactory.initElements(driver, this);
     }
 
-    public void doCreateCompany() throws InterruptedException {
+    public void doCreateCompany(String uniqueCompanyName) throws InterruptedException {
         busCompanyTab.click();
         Thread.sleep(500);
         addCompanyBtn.click();
         Thread.sleep(500);
-        companyName.sendKeys("ABCD-1");
+        companyName.sendKeys(uniqueCompanyName);
         Thread.sleep(500);
         companyDisplayName.sendKeys("ABCD-1");
         Thread.sleep(500);

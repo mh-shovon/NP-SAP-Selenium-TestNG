@@ -11,11 +11,12 @@ public class Setup {
     public WebDriver driver;
 
     @BeforeClass
-    public void setUp() {
+    public void setUp() throws InterruptedException {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.get("https://dev.admin.intercity.jatri.co/login");
+        Thread.sleep(500);
     }
 
     @AfterTest

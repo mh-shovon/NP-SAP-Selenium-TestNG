@@ -28,6 +28,7 @@ public class LoginPage {
             txtUsername.sendKeys(Keys.CONTROL + "a");
             txtUsername.sendKeys(Keys.DELETE);
             txtUsername.sendKeys(username);
+            Thread.sleep(500);
             txtPassword.sendKeys(Keys.CONTROL + "a");
             txtPassword.sendKeys(Keys.DELETE);
             txtPassword.sendKeys(password);
