@@ -22,6 +22,7 @@ public class CreateRouteTestRunner extends Setup {
     @Test(priority = 2)
     public void createRouteTest() throws InterruptedException {
         createRoute = new CreateRoute(driver);
+        Thread.sleep(500);
         createRoute.doCreateRoute();
     }
 }

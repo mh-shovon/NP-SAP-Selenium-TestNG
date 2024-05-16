@@ -7,11 +7,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 import java.util.Set;
 
-public class CreateRoute extends Setup {
+public class CreateRoute extends Setup{
     @FindBy(xpath = "//a[normalize-space()='Bus Company']")
     WebElement busCompanyTab;
     @FindBy(className = "corporate-blue-icon-btn")
@@ -20,40 +21,24 @@ public class CreateRoute extends Setup {
     List<WebElement> companyRouteTab;
     @FindBy(xpath = "//span[normalize-space()='Add Route']")
     WebElement addRouteButton;
-    @FindBy(xpath = "//span[@aria-label='Select origin city']")
-    WebElement selectOriginCity;
-//    @FindBy(xpath = "//li[@id='pv_id_71_0']")
-//    WebElement selectCity1;
-    @FindBy(xpath = "//span[@aria-label='Select destination city']")
-    WebElement selectDestinationCity;
-//    @FindBy(xpath = "//li[@id='pv_id_62_17']")
-//    WebElement selectCity2;
+//    @FindBy(xpath = "//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]")
+//    WebElement originCityDropdown;
+//    Select originCityDropdownSelect = new Select(originCityDropdown);
 
-//public void selectByList() {
-//    driver.findElement(By.xpath("//span[@aria-label='Select origin city']")).click();
-//    List<WebElement> allOptions = driver.findElements(By.cssSelector("select option"));
-//    String option = "Dhaka";
-//    for (int i = 0; i < allOptions.size(); i++) {
-//        if (allOptions.get(i).getText().contains(option)) {
-//            allOptions.get(i).click();
-//            System.out.println("clicked");
-//            break;
-//        }
-//    }
-//}
     public CreateRoute(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
-    public void doCreateRoute() {
+
+    public void doCreateRoute() throws InterruptedException {
         busCompanyTab.click();
+        Thread.sleep(500);
         manageButton.get(0).click();
+        Thread.sleep(500);
         companyRouteTab.get(1).click();
+        Thread.sleep(500);
         addRouteButton.click();
-//        selectOriginCity.click();
-//        selectCity1.click();
-//        selectDestinationCity.click();
-//        selectCity2.click();
-        selectOriginCity.sendKeys("Dhaka");
-        selectDestinationCity.sendKeys("Barishal");
+        Thread.sleep(500);
+//        originCityDropdown.click();
+//        originCityDropdownSelect.selectByValue("Dhaka");
     }
 }
