@@ -12,7 +12,9 @@ repositories {
 dependencies {
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.20.0'
-
     // https://mvnrepository.com/artifact/org.testng/testng
     testImplementation group: 'org.testng', name: 'testng', version: '7.10.1'
+//    // https://mvnrepository.com/artifact/faker/faker
+//    implementation group: 'faker', name: 'faker', version: '0.3.2'
+
 }
