@@ -1,16 +1,20 @@
 package Configuration;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 
 import java.time.Duration;
 
 public class Setup {
-    public WebDriver driver;
+    public static WebDriver driver;
 
-    @BeforeClass
+    @BeforeTest
     public void setUp() throws InterruptedException {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -21,6 +25,6 @@ public class Setup {
 
     @AfterTest
     public void closeBrowser() {
-        driver.quit();
+//        driver.quit();
     }
 }
