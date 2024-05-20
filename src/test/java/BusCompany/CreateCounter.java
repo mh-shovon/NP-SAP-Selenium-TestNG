@@ -68,7 +68,7 @@ public class CreateCounter {
         Thread.sleep(1000);
         addCounterButton.get(0).click();
         Thread.sleep(1000);
-        counterName.sendKeys("Automation Counter-1");
+        counterName.sendKeys("Automation Counter-2");
         Thread.sleep(1000);
         counterCode.sendKeys("1");
         Thread.sleep(1000);
@@ -80,7 +80,7 @@ public class CreateCounter {
         Thread.sleep(1000);
         selectStoppageDropDownItem.get(0).click();
         Thread.sleep(1000);
-        counterMobileNumber.sendKeys("01888000309");
+        counterMobileNumber.sendKeys("01888000312");
         Thread.sleep(1000);
         counterAddress.sendKeys("Gabtoli, Dhaka");
         Thread.sleep(1000);
