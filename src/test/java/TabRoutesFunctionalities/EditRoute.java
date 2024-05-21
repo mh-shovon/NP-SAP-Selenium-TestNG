@@ -1,6 +1,5 @@
-package BusCompany;
+package TabRoutesFunctionalities;
 
-import Configuration.Setup;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,15 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class EditRoute {
-    WebDriver driver;
-    @FindBy(xpath = "//a[normalize-space()='Bus Company']")
-    WebElement busCompanyTab;
-
-    @FindBy(className = "corporate-blue-icon-btn")
-    List<WebElement> manageButton;
-
-    @FindBy(className = "companyOwnerTabNonActive")
-    List<WebElement> companyRouteTab;
+    @FindBy(xpath = "//a[normalize-space()='Routes']")
+    WebElement routesTab;
 
     @FindBy(className = "paginationNextButton")
     List<WebElement> paginationNextButton;
@@ -36,12 +28,7 @@ public class EditRoute {
     }
 
     public void editRoute() throws InterruptedException {
-        Thread.sleep(1000);
-        busCompanyTab.click();
-        Thread.sleep(1000);
-        manageButton.get(0).click();
-        Thread.sleep(1000);
-        companyRouteTab.get(1).click();
+        routesTab.click();
         Thread.sleep(1000);
         paginationNextButton.get(0).click();
         Thread.sleep(1000);
@@ -54,6 +41,4 @@ public class EditRoute {
         saveChangesButton.get(0).click();
         Thread.sleep(1000);
     }
-
-
 }

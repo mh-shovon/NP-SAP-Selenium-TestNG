@@ -1,4 +1,4 @@
-package TestRunner;
+package TestRunner.LoginTestRunners;
 
 import Configuration.Setup;
 import LoginFunctionalities.LoginPage;

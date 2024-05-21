@@ -1,7 +1,6 @@
-package TestRunner;
+package TestRunner.BusCompanyManageTestRunners;
 
-import BusCompany.CreateRoute;
-import BusCompany.EditRoute;
+import BusCompany.Route.EditRoute;
 import Configuration.Setup;
 import LoginFunctionalities.LoginPage;
 import org.openqa.selenium.By;

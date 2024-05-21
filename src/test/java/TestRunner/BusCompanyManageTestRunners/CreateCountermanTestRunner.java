@@ -1,14 +1,13 @@
-package TestRunner;
+package TestRunner.BusCompanyManageTestRunners;
 
-import BusCompany.CreateCounterman;
-import BusCompany.EditCounterman;
+import BusCompany.Counterman.CreateCounterman;
 import Configuration.Setup;
 import LoginFunctionalities.LoginPage;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class EditCountermanTestRunner extends Setup {
+public class CreateCountermanTestRunner extends Setup {
     LoginPage loginPage;
     @Test(priority = 1, description = "User Login")
     public void doLoginWithValidCreds() throws InterruptedException {
@@ -20,15 +19,15 @@ public class EditCountermanTestRunner extends Setup {
         Assert.assertEquals(logoutButtonHeaderActual, logoutButtonHeaderExpected);
     }
 
-    EditCounterman editCounterman;
+    CreateCounterman createCounterman;
     @Test(priority = 2, description = "Creating a new counterman")
-    public void editExistingCountermanTest() throws InterruptedException {
-        editCounterman = new EditCounterman(driver);
+    public void createCountermanTest() throws InterruptedException {
+        createCounterman = new CreateCounterman(driver);
         Thread.sleep(1000);
-        editCounterman.editExistingCounterman();
+        createCounterman.createNewCounterman();
         Thread.sleep(1000);
-        String createCountermanSuccessfullyActualMessage = driver.findElement(By.xpath("//div[@class='mosha__toast__content__description']")).getText();
-        String createCountermanSuccessfullyExpectedMessage = "Counterman updated successfully";
+        String createCountermanSuccessfullyActualMessage = driver.findElement(By.xpath("//div[@class='mosha__toast__content__text']")).getText();
+        String createCountermanSuccessfullyExpectedMessage = "Success";
         Assert.assertEquals(createCountermanSuccessfullyActualMessage, createCountermanSuccessfullyExpectedMessage);
         Thread.sleep(1000);
     }

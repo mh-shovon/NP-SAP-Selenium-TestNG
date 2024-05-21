@@ -1,6 +1,6 @@
-package TestRunner;
+package TestRunner.TabRoutesTestRunners;
 
-import BusCompany.CreateRoute;
+import BusCompany.Route.CreateRoute;
 import Configuration.Setup;
 import LoginFunctionalities.LoginPage;
 import org.openqa.selenium.By;
@@ -21,7 +21,7 @@ public class CreateRouteTestRunner extends Setup {
 
     CreateRoute createRoute;
     @Test(priority = 2, description = "Check the route is exist or not")
-    public void checkExistingRouteTest() throws InterruptedException {
+    public void testCheckExistingRoute() throws InterruptedException {
         createRoute = new CreateRoute(driver);
         createRoute.checkExistingRoute();
         String addRouteButtonHeaderActual = driver.findElement(By.xpath("//div[@class='mosha__toast__content__text']")).getText();
@@ -30,7 +30,7 @@ public class CreateRouteTestRunner extends Setup {
     }
 
     @Test(priority = 3, description = "Creating a new route")
-    public void createRouteTest() throws InterruptedException {
+    public void testCreateRoute() throws InterruptedException {
         createRoute = new CreateRoute(driver);
         createRoute.createNewRoute();
         String addRouteButtonHeaderActual = driver.findElement(By.xpath("//div[@class='mosha__toast__content__description']")).getText();

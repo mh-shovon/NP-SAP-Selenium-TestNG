@@ -1,13 +1,13 @@
-package TestRunner;
+package TestRunner.TabCounterTestRunners;
 
-import BusCompany.CreateCounterman;
 import Configuration.Setup;
 import LoginFunctionalities.LoginPage;
+import TabCounterFunctionalities.EditCounter;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CreateCountermanTestRunner extends Setup {
+public class EditCounterTestRunner extends Setup {
     LoginPage loginPage;
     @Test(priority = 1, description = "User Login")
     public void doLoginWithValidCreds() throws InterruptedException {
@@ -19,16 +19,15 @@ public class CreateCountermanTestRunner extends Setup {
         Assert.assertEquals(logoutButtonHeaderActual, logoutButtonHeaderExpected);
     }
 
-    CreateCounterman createCounterman;
-    @Test(priority = 2, description = "Creating a new counterman")
-    public void createCountermanTest() throws InterruptedException {
-        createCounterman = new CreateCounterman(driver);
+    EditCounter editCounter;
+    @Test(priority = 2, description = "User Can edit the counter")
+    public void testEditCounter() throws InterruptedException {
+        editCounter = new EditCounter(driver);
+        editCounter.editExistingCounter();
         Thread.sleep(1000);
-        createCounterman.createNewCounterman();
-        Thread.sleep(1000);
-        String createCountermanSuccessfullyActualMessage = driver.findElement(By.xpath("//div[@class='mosha__toast__content__text']")).getText();
-        String createCountermanSuccessfullyExpectedMessage = "Success";
-        Assert.assertEquals(createCountermanSuccessfullyActualMessage, createCountermanSuccessfullyExpectedMessage);
+        String createCounterSuccessfullyActualMessage = driver.findElement(By.xpath("//div[@class='mosha__toast__content__description']")).getText();
+        String createCounterSuccessfullyExpectedMessage = "Counter updated successfully";
+        Assert.assertEquals(createCounterSuccessfullyActualMessage, createCounterSuccessfullyExpectedMessage);
         Thread.sleep(1000);
     }
 }

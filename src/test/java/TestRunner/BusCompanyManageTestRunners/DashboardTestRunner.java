@@ -1,11 +1,10 @@
-package TestRunner;
+package TestRunner.BusCompanyManageTestRunners;
 
 import Configuration.Setup;
 import Dashboard.DashboardFilter;
 import LoginFunctionalities.LoginPage;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class DashboardTestRunner extends Setup {

@@ -1,4 +1,4 @@
-package BusCompany;
+package BusCompany.Route;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,7 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class EditCounter {
+public class EditRoute {
+    WebDriver driver;
     @FindBy(xpath = "//a[normalize-space()='Bus Company']")
     WebElement busCompanyTab;
 
@@ -15,41 +16,43 @@ public class EditCounter {
     List<WebElement> manageButton;
 
     @FindBy(className = "companyOwnerTabNonActive")
-    List<WebElement> companyCounterTab;
+    List<WebElement> companyRouteTab;
 
-    @FindBy(xpath = "//button[normalize-space()='14']")
-    WebElement page14Button;
+    @FindBy(className = "paginationNextButton")
+    List<WebElement> paginationNextButton;
 
     @FindBy(className = "primary-border-icon-btn")
     List<WebElement> editButton;
 
-    @FindBy(xpath = "//input[@placeholder='Enter counter code']")
-    WebElement counterCode;
+    @FindBy(className = "text-primaryText")
+    List<WebElement> directionDown;
 
-    @FindBy(xpath = "//span[normalize-space()='Save changes']")
-    WebElement saveChangesButton;
+    @FindBy(className = "corporate-left-icon-btn")
+    List<WebElement> saveChangesButton;
 
-    public EditCounter(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+    public EditRoute(WebDriver driver){
+        PageFactory.initElements(driver,this);
     }
 
-    public void editExistingCounter() throws InterruptedException {
+    public void editRoute() throws InterruptedException {
         Thread.sleep(1000);
         busCompanyTab.click();
         Thread.sleep(1000);
         manageButton.get(0).click();
         Thread.sleep(1000);
-        companyCounterTab.get(2).click();
+        companyRouteTab.get(1).click();
         Thread.sleep(1000);
-        //paginationButton.get(3).click();
-        page14Button.click();
+        paginationNextButton.get(0).click();
         Thread.sleep(1000);
-        editButton.get(5).click();
+        paginationNextButton.get(1).click();
         Thread.sleep(1000);
-        counterCode.sendKeys("AC-1");
+        editButton.get(0).click();
         Thread.sleep(1000);
-        saveChangesButton.click();
+        directionDown.get(7).click();
         Thread.sleep(1000);
-
+        saveChangesButton.get(0).click();
+        Thread.sleep(1000);
     }
+
+
 }

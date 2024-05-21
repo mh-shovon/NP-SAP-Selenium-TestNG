@@ -1,23 +1,15 @@
-package BusCompany;
+package TabRoutesFunctionalities;
 
-import Configuration.Setup;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class CreateRoute extends Setup{
-    @FindBy(xpath = "//a[normalize-space()='Bus Company']")
-    WebElement busCompanyTab;
-
-    @FindBy(className = "corporate-blue-icon-btn")
-    List<WebElement> manageButton;
-
-    @FindBy(className = "companyOwnerTabNonActive")
-    List<WebElement> companyRouteTab;
+public class CreateRoute {
+    @FindBy(xpath = "//a[normalize-space()='Routes']")
+    WebElement routesTab;
 
     @FindBy(xpath = "//span[normalize-space()='Add Route']")
     WebElement addRouteButton;
@@ -46,11 +38,7 @@ public class CreateRoute extends Setup{
 
     public void checkExistingRoute() throws InterruptedException {
         Thread.sleep(1000);
-        busCompanyTab.click();
-        Thread.sleep(1000);
-        manageButton.get(0).click();
-        Thread.sleep(1000);
-        companyRouteTab.get(1).click();
+        routesTab.click();
         Thread.sleep(1000);
         addRouteButton.click();
         Thread.sleep(1000);
@@ -68,11 +56,7 @@ public class CreateRoute extends Setup{
         Thread.sleep(1000);
     }
     public void createNewRoute() throws InterruptedException {
-        busCompanyTab.click();
-        Thread.sleep(1000);
-        manageButton.get(0).click();
-        Thread.sleep(1000);
-        companyRouteTab.get(1).click();
+        routesTab.click();
         Thread.sleep(1000);
         addRouteButton.click();
         Thread.sleep(1000);

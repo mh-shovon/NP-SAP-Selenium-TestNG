@@ -1,6 +1,5 @@
-package BusCompany;
+package TabCounterFunctionalities;
 
-import jdk.jshell.Diag;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,17 +8,17 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class CreateCounter {
-    @FindBy(xpath = "//a[normalize-space()='Bus Company']")
-    WebElement busCompanyTab;
-
-    @FindBy(className = "corporate-blue-icon-btn")
-    List<WebElement> manageButton;
-
-    @FindBy(className = "companyOwnerTabNonActive")
-    List<WebElement> companyCounterTab;
+    @FindBy(xpath = "//a[normalize-space()='Counter']")
+    WebElement counterTab;
 
     @FindBy(className = "topBarAddButton")
     List<WebElement> addCounterButton;
+
+    @FindBy(className = "p-dropdown-label")
+    List<WebElement> operatorDropdown;
+
+    @FindBy(className = "p-dropdown-item")
+    List<WebElement> operatorDropdownItem;
 
     @FindBy(xpath = "//input[@placeholder='Enter counter name']")
     WebElement counterName;
@@ -45,8 +44,8 @@ public class CreateCounter {
     @FindBy(xpath = "//input[@placeholder='Enter counter address']")
     WebElement counterAddress;
 
-    @FindBy(xpath = "//span[@aria-label='Select day']")
-    WebElement futureTripValidation;
+    @FindBy(className = "p-dropdown-label")
+    List<WebElement> futureTripValidation;
 
     @FindBy(className = "p-dropdown-item")
     List<WebElement> futureTripValidationDropDownItem;
@@ -60,17 +59,17 @@ public class CreateCounter {
 
     public void createNewCounter() throws InterruptedException {
         Thread.sleep(1000);
-        busCompanyTab.click();
-        Thread.sleep(1000);
-        manageButton.get(0).click();
-        Thread.sleep(1000);
-        companyCounterTab.get(2).click();
+        counterTab.click();
         Thread.sleep(1000);
         addCounterButton.get(0).click();
         Thread.sleep(1000);
+        operatorDropdown.get(0).click();
+        Thread.sleep(1000);
+        operatorDropdownItem.get(0).click();
+        Thread.sleep(1000);
         counterName.sendKeys("Automation Counter-2");
         Thread.sleep(1000);
-        counterCode.sendKeys("1");
+        counterCode.sendKeys("AC-2");
         Thread.sleep(1000);
         selectCity.click();
         Thread.sleep(1000);
@@ -84,7 +83,7 @@ public class CreateCounter {
         Thread.sleep(1000);
         counterAddress.sendKeys("Gabtoli, Dhaka");
         Thread.sleep(1000);
-        futureTripValidation.click();
+        futureTripValidation.get(3).click();
         Thread.sleep(1000);
         futureTripValidationDropDownItem.get(7).click();
         Thread.sleep(1000);

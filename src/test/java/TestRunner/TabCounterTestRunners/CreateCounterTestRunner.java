@@ -1,8 +1,8 @@
-package TestRunner;
+package TestRunner.TabCounterTestRunners;
 
-import BusCompany.CreateCounter;
 import Configuration.Setup;
 import LoginFunctionalities.LoginPage;
+import TabCounterFunctionalities.CreateCounter;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,7 +13,7 @@ public class CreateCounterTestRunner extends Setup {
     public void doLoginWithValidCreds() throws InterruptedException {
         loginPage = new LoginPage(driver);
         loginPage.doLogin("01983285059", "01983285059@jatri");
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         String logoutButtonHeaderActual = driver.findElement(By.xpath("//button[normalize-space()='Logout']")).getText();
         String logoutButtonHeaderExpected = "Logout";
         Assert.assertEquals(logoutButtonHeaderActual, logoutButtonHeaderExpected);
@@ -21,7 +21,7 @@ public class CreateCounterTestRunner extends Setup {
 
     CreateCounter createCounter;
     @Test(priority = 2, description = "Create a new counter")
-    public void createNewCounterTest() throws InterruptedException {
+    public void testCreateNewCounter() throws InterruptedException {
         createCounter = new CreateCounter(driver);
         createCounter.createNewCounter();
         Thread.sleep(1000);
