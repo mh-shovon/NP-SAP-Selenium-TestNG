@@ -1,4 +1,4 @@
-package BusCompany.Counter.Company;
+package BusCompany.Company;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

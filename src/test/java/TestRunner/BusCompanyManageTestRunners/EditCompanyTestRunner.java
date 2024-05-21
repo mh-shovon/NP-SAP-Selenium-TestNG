@@ -1,6 +1,6 @@
 package TestRunner.BusCompanyManageTestRunners;
 
-import BusCompany.Counter.Company.EditCompany;
+import BusCompany.Company.EditCompany;
 import Configuration.Setup;
 import LoginFunctionalities.LoginPage;
 import org.openqa.selenium.By;
