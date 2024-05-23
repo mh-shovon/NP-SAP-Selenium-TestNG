@@ -1,4 +1,4 @@
-package TestRunner.BusCompanyManageTestRunners;
+package TestRunner.BusCompanyManageTestRunners.CompanyTestRunner;
 
 import BusCompany.Company.EditCompany;
 import Configuration.Setup;

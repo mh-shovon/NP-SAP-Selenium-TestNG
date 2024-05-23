@@ -1,13 +1,13 @@
-package TestRunner.TabUserTestRunners.OwnerTestRunners;
+package TestRunner.BusCompanyManageTestRunners.CountermanTestRunner;
 
+import BusCompany.Counterman.CreateCounterman;
 import Configuration.Setup;
 import LoginFunctionalities.LoginPage;
-import TabUserFunctionalities.Owner.CreateOwner;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CreateOwnerTestRunner extends Setup {
+public class CreateCountermanTestRunner extends Setup {
     LoginPage loginPage;
     @Test(priority = 1, description = "User Login")
     public void doLoginWithValidCreds() throws InterruptedException {
@@ -19,16 +19,16 @@ public class CreateOwnerTestRunner extends Setup {
         Assert.assertEquals(logoutButtonHeaderActual, logoutButtonHeaderExpected);
     }
 
-    CreateOwner createOwner;
-    @Test(priority = 2, description = "Creating a new owner")
-    public void testCreateNewOwner() throws InterruptedException {
-        createOwner = new CreateOwner(driver);
+    CreateCounterman createCounterman;
+    @Test(priority = 2, description = "Creating a new counterman")
+    public void createCountermanTest() throws InterruptedException {
+        createCounterman = new CreateCounterman(driver);
         Thread.sleep(1000);
-        createOwner.createNewOwner();
+        createCounterman.createNewCounterman();
         Thread.sleep(1000);
-        String createOwnerSuccessfullyActualMessage = driver.findElement(By.xpath("//div[@class='mosha__toast__content__text']")).getText();
-        String createOwnerSuccessfullyExpectedMessage = "Success";
-        Assert.assertEquals(createOwnerSuccessfullyActualMessage, createOwnerSuccessfullyExpectedMessage);
+        String createCountermanSuccessfullyActualMessage = driver.findElement(By.xpath("//div[@class='mosha__toast__content__text']")).getText();
+        String createCountermanSuccessfullyExpectedMessage = "Success";
+        Assert.assertEquals(createCountermanSuccessfullyActualMessage, createCountermanSuccessfullyExpectedMessage);
         Thread.sleep(1000);
     }
 }

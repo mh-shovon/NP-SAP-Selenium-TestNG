@@ -22,7 +22,7 @@ public class Setup {
 
     @AfterTest
     public void closeBrowser() {
-        driver.quit();
+//        driver.quit();
     }
 
 }

@@ -1,4 +1,4 @@
-package TestRunner.BusCompanyManageTestRunners;
+package TestRunner.BusCompanyManageTestRunners.CountermanTestRunner;
 
 import BusCompany.Counterman.EditCounterman;
 import Configuration.Setup;
@@ -20,7 +20,7 @@ public class EditCountermanTestRunner extends Setup {
     }
 
     EditCounterman editCounterman;
-    @Test(priority = 2, description = "Creating a new counterman")
+    @Test(priority = 2, description = "Edit an existing counterman")
     public void editExistingCountermanTest() throws InterruptedException {
         editCounterman = new EditCounterman(driver);
         Thread.sleep(1000);

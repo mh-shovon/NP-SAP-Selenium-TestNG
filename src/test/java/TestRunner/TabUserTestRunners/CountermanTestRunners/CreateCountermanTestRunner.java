@@ -1,8 +1,9 @@
-package TestRunner.BusCompanyManageTestRunners;
+package TestRunner.TabUserTestRunners.CountermanTestRunners;
 
-import BusCompany.Counterman.CreateCounterman;
+
 import Configuration.Setup;
 import LoginFunctionalities.LoginPage;
+import TabUserFunctionalities.Counterman.CreateCounterman;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -20,12 +21,12 @@ public class CreateCountermanTestRunner extends Setup {
     }
 
     CreateCounterman createCounterman;
-    @Test(priority = 2, description = "Creating a new counterman")
-    public void createCountermanTest() throws InterruptedException {
+    @Test(priority = 2, description = "Create a new counterman")
+    public void testCreateNewCounterman() throws InterruptedException {
         createCounterman = new CreateCounterman(driver);
         Thread.sleep(1000);
         createCounterman.createNewCounterman();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         String createCountermanSuccessfullyActualMessage = driver.findElement(By.xpath("//div[@class='mosha__toast__content__text']")).getText();
         String createCountermanSuccessfullyExpectedMessage = "Success";
         Assert.assertEquals(createCountermanSuccessfullyActualMessage, createCountermanSuccessfullyExpectedMessage);

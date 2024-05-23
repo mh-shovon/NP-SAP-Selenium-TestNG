@@ -1,4 +1,4 @@
-package TabUserFunctionalities.Owner;
+package TabUserFunctionalities.Counterman;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,84 +7,92 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class FilterOwner {
+public class FilterCounterman {
     @FindBy(xpath = "//a[normalize-space()='User']")
     WebElement userTab;
 
+    @FindBy(className = "companyOwnerTabNonActive")
+    List<WebElement> countermanTab;
+
     @FindBy(className = "p-dropdown-label")
-    List<WebElement> operatorDropdown;
+    List<WebElement> ownerDropdown;
 
     @FindBy(className = "p-dropdown-item")
-    List<WebElement> operatorDropdownItem;
+    List<WebElement> ownerDropdownItem;
 
     @FindBy(xpath = "//i[@class='p-dropdown-clear-icon pi pi-times']")
     WebElement dropdownClearIcon;
 
     @FindBy(xpath = "//input[@placeholder='Enter name']")
-    WebElement ownerName;
+    WebElement countermanName;
 
     @FindBy(xpath = "//input[@placeholder='Enter mobile number']")
-    WebElement ownerMobile;
+    WebElement countermanMobile;
 
     @FindBy(xpath = "//button[@id='submit-button']")
     WebElement searchButton;
 
-    public FilterOwner(WebDriver driver) {
+    public FilterCounterman(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    public void filterOwnerWithNoData() throws InterruptedException {
+    public void filterCountermanWithNoData() throws InterruptedException {
         userTab.click();
+        Thread.sleep(1000);
+        countermanTab.get(2).click();
         Thread.sleep(1000);
         searchButton.click();
     }
 
-    public void filterOwnerWithOperator() throws InterruptedException {
+    public void filterCountermanWithOperator() throws InterruptedException {
         userTab.click();
         Thread.sleep(1000);
-        operatorDropdown.get(0).click();
+        countermanTab.get(2).click();
         Thread.sleep(1000);
-        operatorDropdownItem.get(0).click();
+        ownerDropdown.get(0).click();
         Thread.sleep(1000);
-        searchButton.click();
-        Thread.sleep(1000);
-    }
-
-    public void filterOwnerWithOwnerName() throws InterruptedException {
-        userTab.click();
-        Thread.sleep(1000);
-        dropdownClearIcon.click();
-        Thread.sleep(1000);
-        ownerName.sendKeys("Owner-1");
-        Thread.sleep(1000);
-        searchButton.click();
-    }
-
-    public void filterOwnerWithOwnerMobile() throws InterruptedException {
-        userTab.click();
-        Thread.sleep(1000);
-        ownerName.clear();
-        Thread.sleep(1000);
-        ownerMobile.sendKeys("01888000002");
+        ownerDropdownItem.get(0).click();
         Thread.sleep(1000);
         searchButton.click();
         Thread.sleep(1000);
     }
 
-    public void filterOwnerWithAllData() throws InterruptedException {
+    public void filterCountermanWithCountermanName() throws InterruptedException {
         userTab.click();
         Thread.sleep(1000);
-        operatorDropdown.get(0).click();
+        countermanTab.get(2).click();
         Thread.sleep(1000);
-        operatorDropdownItem.get(0).click();
+        countermanName.sendKeys("CM.Gabtoli Counter(1)-1");
         Thread.sleep(1000);
-        ownerName.clear();
-        ownerName.sendKeys("Owner-1");
+        searchButton.click();
+    }
+
+    public void filterCountermanWithCountermanMobile() throws InterruptedException {
+        userTab.click();
         Thread.sleep(1000);
-        ownerMobile.clear();
-        ownerMobile.sendKeys("01888000002");
+        countermanTab.get(2).click();
+        Thread.sleep(1000);
+        countermanMobile.sendKeys("01888000062");
         Thread.sleep(1000);
         searchButton.click();
         Thread.sleep(1000);
     }
+
+    public void filterCountermanWithAllData() throws InterruptedException {
+        userTab.click();
+        Thread.sleep(1000);
+        countermanTab.get(2).click();
+        Thread.sleep(1000);
+        ownerDropdown.get(0).click();
+        Thread.sleep(1000);
+        ownerDropdownItem.get(0).click();
+        Thread.sleep(1000);
+        countermanName.sendKeys("Automation Counterman-1");
+        Thread.sleep(1000);
+        countermanMobile.sendKeys("01888000205");
+        Thread.sleep(1000);
+        searchButton.click();
+        Thread.sleep(1000);
+    }
+
 }

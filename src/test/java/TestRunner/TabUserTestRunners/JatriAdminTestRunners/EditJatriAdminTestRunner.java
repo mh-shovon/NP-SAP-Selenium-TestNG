@@ -1,13 +1,13 @@
-package TestRunner.TabUserTestRunners.OwnerTestRunners;
+package TestRunner.TabUserTestRunners.JatriAdminTestRunners;
 
 import Configuration.Setup;
 import LoginFunctionalities.LoginPage;
-import TabUserFunctionalities.Owner.CreateOwner;
+import TabUserFunctionalities.JatriAdmin.EditJatriAdmin;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CreateOwnerTestRunner extends Setup {
+public class EditJatriAdminTestRunner extends Setup {
     LoginPage loginPage;
     @Test(priority = 1, description = "User Login")
     public void doLoginWithValidCreds() throws InterruptedException {
@@ -19,16 +19,16 @@ public class CreateOwnerTestRunner extends Setup {
         Assert.assertEquals(logoutButtonHeaderActual, logoutButtonHeaderExpected);
     }
 
-    CreateOwner createOwner;
-    @Test(priority = 2, description = "Creating a new owner")
-    public void testCreateNewOwner() throws InterruptedException {
-        createOwner = new CreateOwner(driver);
+    EditJatriAdmin editJatriAdmin;
+    @Test(priority = 2, description = "Edit an existing jatri admin")
+    public void testEditNewJatriAdmin() throws InterruptedException {
+        editJatriAdmin = new EditJatriAdmin(driver);
         Thread.sleep(1000);
-        createOwner.createNewOwner();
+        editJatriAdmin.editExistingJatriAdmin();
         Thread.sleep(1000);
-        String createOwnerSuccessfullyActualMessage = driver.findElement(By.xpath("//div[@class='mosha__toast__content__text']")).getText();
-        String createOwnerSuccessfullyExpectedMessage = "Success";
-        Assert.assertEquals(createOwnerSuccessfullyActualMessage, createOwnerSuccessfullyExpectedMessage);
+        String ownerUpdatedSuccessfullyActualMessage = driver.findElement(By.xpath("//div[@class='mosha__toast__content__description']")).getText();
+        String ownerUpdatedSuccessfullyExpectedMessage = "Jatri admin updated successfully";
+        Assert.assertEquals(ownerUpdatedSuccessfullyActualMessage, ownerUpdatedSuccessfullyExpectedMessage);
         Thread.sleep(1000);
     }
 }
