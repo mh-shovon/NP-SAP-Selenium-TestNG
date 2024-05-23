@@ -1,4 +1,4 @@
-package TestRunner.BusCompanyManageTestRunners;
+package TestRunner.DashboardTestRunners;
 
 import Configuration.Setup;
 import Dashboard.DashboardFilter;
@@ -12,7 +12,9 @@ public class DashboardTestRunner extends Setup {
     @Test(priority = 1)
     public void doLoginWithValidCreds() throws InterruptedException {
         loginPage = new LoginPage(driver);
+        Thread.sleep(1000);
         loginPage.doLogin("01983285059", "01983285059@jatri");
+        Thread.sleep(1000);
         String logoutButtonHeaderActual5 = driver.findElement(By.xpath("//button[normalize-space()='Logout']")).getText();
         String logoutButtonHeaderExpected5 = "Logout";
         Assert.assertEquals(logoutButtonHeaderActual5, logoutButtonHeaderExpected5);
@@ -20,9 +22,11 @@ public class DashboardTestRunner extends Setup {
 
     DashboardFilter dashboardFilter;
     @Test(priority = 2)
-    public void filterDashboardTest() throws InterruptedException {
+    public void testFilterDashboard() throws InterruptedException {
         dashboardFilter = new DashboardFilter(driver);
+        Thread.sleep(1000);
         dashboardFilter.filterDashboard();
+        Thread.sleep(1000);
         String logoutButtonHeaderActual5 = driver.findElement(By.xpath("//button[normalize-space()='Logout']")).getText();
         String logoutButtonHeaderExpected5 = "Logout";
         Assert.assertEquals(logoutButtonHeaderActual5, logoutButtonHeaderExpected5);

@@ -12,17 +12,23 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class DashboardFilter {
-//    @FindBy(xpath = "//body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")
-//    WebElement fromDate;
-//
-//    @FindBy(xpath = "//body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/input[1]")
-//    WebElement toDate;
-//
-//    @FindBy(xpath = "//span[@aria-label='Wednesday, May 1, 2024']")
-//    WebElement selectFromDate;
-//
-//    @FindBy(xpath = "//span[@aria-label='Friday, May 31, 2024']")
-//    WebElement selectToDate;
+    @FindBy(className = "primaryDateFieldInput")
+    List<WebElement> fromDate;
+
+//    @FindBy(className = "vc-day-content")
+//    List<WebElement> selectFromDate;
+
+    @FindBy(xpath = "//span[@aria-label='Wednesday, May 1, 2024']")
+    WebElement selectFromDate;
+
+    @FindBy(className = "primaryDateFieldInput")
+    List<WebElement> toDate;
+
+//    @FindBy(className = "vc-day-content")
+//    List<WebElement> selectToDaTe;
+
+    @FindBy(xpath = "//span[@aria-label='Wednesday, May 1, 2024']")
+    WebElement selectToDate;
 
     @FindBy(xpath = "//img[@alt='searchIcon']")
     WebElement searchButton;
@@ -31,12 +37,16 @@ public class DashboardFilter {
         PageFactory.initElements(driver, this);
     }
     public void filterDashboard() throws InterruptedException {
-//        fromDate.click();
+//        fromDate.get(0).click();
 //        Thread.sleep(1000);
+////        selectFromDate.get(3).click();
+////        Thread.sleep(1000);
 //        selectFromDate.click();
 //        Thread.sleep(1000);
-//        toDate.click();
+//        toDate.get(1).click();
 //        Thread.sleep(1000);
+////        selectToDaTe.get(33).click();
+////        Thread.sleep(1000);
 //        selectToDate.click();
 //        Thread.sleep(1000);
         searchButton.click();
