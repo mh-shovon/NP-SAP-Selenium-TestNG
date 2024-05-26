@@ -17,9 +17,6 @@ public class FilterOwner {
     @FindBy(className = "p-dropdown-item")
     List<WebElement> operatorDropdownItem;
 
-    @FindBy(xpath = "//i[@class='p-dropdown-clear-icon pi pi-times']")
-    WebElement dropdownClearIcon;
-
     @FindBy(xpath = "//input[@placeholder='Enter name']")
     WebElement ownerName;
 
@@ -52,8 +49,6 @@ public class FilterOwner {
 
     public void filterOwnerWithOwnerName() throws InterruptedException {
         userTab.click();
-        Thread.sleep(1000);
-        dropdownClearIcon.click();
         Thread.sleep(1000);
         ownerName.sendKeys("Owner-1");
         Thread.sleep(1000);
