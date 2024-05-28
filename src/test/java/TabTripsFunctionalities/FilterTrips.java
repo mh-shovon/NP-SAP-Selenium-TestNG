@@ -138,6 +138,7 @@ public class FilterTrips extends Setup {
         Thread.sleep(1000);
     }
 
+    public static String monthYear = "July 2024";
     public void filterTripWithOperatorAndDate() throws InterruptedException {
         tripsTab.click();
         Thread.sleep(1000);
@@ -145,7 +146,6 @@ public class FilterTrips extends Setup {
         Thread.sleep(1000);
         operatorDropdownItem.get(0).click();
         Thread.sleep(1000);
-        String monthYear = "June 2024";
         WebElement dateField = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[1]"));
         dateField.click();
         Thread.sleep(1000);
@@ -159,7 +159,7 @@ public class FilterTrips extends Setup {
                 nextButton.click();
             }
         }
-        WebElement selectDate = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[2]/div/div/div[2]/div[1]/div/div[2]/div[19]/span"));
+        WebElement selectDate = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[2]/div/div/div[2]/div[1]/div/div[2]/div[33]/span"));
         selectDate.click();
         Thread.sleep(1000);
         searchButton.click();
