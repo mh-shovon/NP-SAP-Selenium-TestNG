@@ -23,18 +23,18 @@ public class LoginTestRunner extends Setup {
     public void doLoginWithInValidCreds() throws InterruptedException {
         loginPage = new LoginPage(driver);
         loginPage.doLogin("01983285058", "01983285059@jatr");
-        String logoutButtonHeaderActual5 = driver.findElement(By.xpath("//button[@id='login-btn']")).getText();
-        String logoutButtonHeaderExpected5 = "Log in";
-        Assert.assertEquals(logoutButtonHeaderActual5, logoutButtonHeaderExpected5);
+        String logoutButtonHeaderActual1 = driver.findElement(By.xpath("//button[@id='login-btn']")).getText();
+        String logoutButtonHeaderExpected1 = "Log in";
+        Assert.assertEquals(logoutButtonHeaderActual1, logoutButtonHeaderExpected1);
     }
 
     @Test(priority = 3)
     public void doLoginWithValidCreds() throws InterruptedException {
         loginPage = new LoginPage(driver);
         loginPage.doLogin("01983285059", "01983285059@jatri");
-        String logoutButtonHeaderActual5 = driver.findElement(By.xpath("//button[normalize-space()='Logout']")).getText();
-        String logoutButtonHeaderExpected5 = "Logout";
-        Assert.assertEquals(logoutButtonHeaderActual5, logoutButtonHeaderExpected5);
+        String logoutButtonHeaderActual2 = driver.findElement(By.xpath("//button[normalize-space()='Logout']")).getText();
+        String logoutButtonHeaderExpected2 = "Logout";
+        Assert.assertEquals(logoutButtonHeaderActual2, logoutButtonHeaderExpected2);
     }
 }
 

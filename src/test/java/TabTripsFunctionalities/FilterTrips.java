@@ -159,7 +159,7 @@ public class FilterTrips extends Setup {
                 nextButton.click();
             }
         }
-        WebElement selectDate = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[2]/div/div/div[2]/div[1]/div/div[2]/div[33]/span"));
+        WebElement selectDate = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[2]/div/div/div[2]/div[1]/div/div[2]/div[19]/span"));
         selectDate.click();
         Thread.sleep(1000);
         searchButton.click();

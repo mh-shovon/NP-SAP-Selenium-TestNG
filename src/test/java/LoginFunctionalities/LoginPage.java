@@ -8,10 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
         @FindBy(xpath = "//input[@placeholder='01XXXXXXXXX']")
-        WebElement txtUsername;
+        WebElement userPhoneNumber;
 
         @FindBy(xpath = "//input[@placeholder='Password']")
-        WebElement txtPassword;
+        WebElement userPassword;
 
         @FindBy(xpath = "//button[@id='login-btn']")
         WebElement loginButton;
@@ -25,13 +25,13 @@ public class LoginPage {
         }
 
         public void doLogin(String username, String password) throws InterruptedException {
-            txtUsername.sendKeys(Keys.CONTROL + "a");
-            txtUsername.sendKeys(Keys.DELETE);
-            txtUsername.sendKeys(username);
+            userPhoneNumber.sendKeys(Keys.CONTROL + "a");
+            userPhoneNumber.sendKeys(Keys.DELETE);
+            userPhoneNumber.sendKeys(username);
             Thread.sleep(500);
-            txtPassword.sendKeys(Keys.CONTROL + "a");
-            txtPassword.sendKeys(Keys.DELETE);
-            txtPassword.sendKeys(password);
+            userPassword.sendKeys(Keys.CONTROL + "a");
+            userPassword.sendKeys(Keys.DELETE);
+            userPassword.sendKeys(password);
             Thread.sleep(500);
             loginButton.click();
             Thread.sleep(500);
