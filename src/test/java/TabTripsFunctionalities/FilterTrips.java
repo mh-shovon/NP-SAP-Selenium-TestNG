@@ -1,5 +1,7 @@
 package TabTripsFunctionalities;
 
+import Configuration.Setup;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class FilterTrips {
+public class FilterTrips extends Setup {
     @FindBy(xpath = "//a[normalize-space()='Trips']")
     WebElement tripsTab;
 
@@ -37,12 +39,6 @@ public class FilterTrips {
 
     @FindBy(className = "p-dropdown-item")
     List<WebElement> directionDropdownItem;
-
-    @FindBy(xpath = "//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[1]/img")
-    WebElement dateField;
-
-    @FindBy(xpath = "//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[2]/div/div/div[2]/div[1]/div/div[2]/div[41]/span")
-    WebElement selectDate;
 
     @FindBy(className = "p-dropdown-label")
     List<WebElement> tripProgressDropdown;
@@ -142,19 +138,32 @@ public class FilterTrips {
         Thread.sleep(1000);
     }
 
-//    public void filterTripWithOperatorAndDate() throws InterruptedException {
-//        tripsTab.click();
-//        Thread.sleep(1000);
-//        operatorDropdown.get(0).click();
-//        Thread.sleep(1000);
-//        operatorDropdownItem.get(0).click();
-//        Thread.sleep(1000);
-//        dateField.click();
-//        Thread.sleep(1000);
-//        selectDate.click();
-//        Thread.sleep(1000);
-//        searchButton.click();
-//        Thread.sleep(1000);
-//    }
+    public void filterTripWithOperatorAndDate() throws InterruptedException {
+        tripsTab.click();
+        Thread.sleep(1000);
+        operatorDropdown.get(0).click();
+        Thread.sleep(1000);
+        operatorDropdownItem.get(0).click();
+        Thread.sleep(1000);
+        String monthYear = "June 2024";
+        WebElement dateField = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[1]"));
+        dateField.click();
+        Thread.sleep(1000);
+        while (true){
+            String textMonthYear = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[2]/div/div/div[2]/div[1]/div/div[1]/div")).getText();
+            if(textMonthYear.equals(monthYear)){
+                break;
+            }
+            else {
+                WebElement nextButton = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[2]/div/div/div[2]/div[2]/div[2]"));
+                nextButton.click();
+            }
+        }
+        WebElement selectDate = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[2]/div/div/div[2]/div[1]/div/div[2]/div[33]/span"));
+        selectDate.click();
+        Thread.sleep(1000);
+        searchButton.click();
+        Thread.sleep(1000);
+    }
 
 }

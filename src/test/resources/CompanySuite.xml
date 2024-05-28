@@ -2,13 +2,13 @@
 <suite name = "SAP-NP-TestNG">
     <test name = "Test-Create Company">
         <classes>
-            <class name = "TestRunner.BusCompanyManageTestRunners.CompanyTestRunner.CreateCompanyTestRunner">Test-1</class>
+            <class name = "TestRunners.BusCompanyManageTestRunners.CompanyTestRunner.CreateCompanyTestRunner">Test-1</class>
         </classes>
     </test>
 
     <test name = "Test-Edit Company">
         <classes>
-            <class name = "TestRunner.BusCompanyManageTestRunners.CompanyTestRunner.EditCompanyTestRunner">Test-2</class>
+            <class name = "TestRunners.BusCompanyManageTestRunners.CompanyTestRunner.EditCompanyTestRunner">Test-2</class>
         </classes>
     </test>
 </suite>
