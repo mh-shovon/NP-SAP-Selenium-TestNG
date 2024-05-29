@@ -138,7 +138,7 @@ public class FilterTrips extends Setup {
         Thread.sleep(1000);
     }
 
-    public static String monthYear = "July 2024";
+
     public void filterTripWithOperatorAndDate() throws InterruptedException {
         tripsTab.click();
         Thread.sleep(1000);
@@ -149,15 +149,17 @@ public class FilterTrips extends Setup {
         WebElement dateField = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[1]"));
         dateField.click();
         Thread.sleep(1000);
-        while (true){
+        String monthYear = "July 2024";
+        while (true) {
             String textMonthYear = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[2]/div/div/div[2]/div[1]/div/div[1]/div")).getText();
+
+            System.out.println("textMonthYear: " + textMonthYear + " logic: " + textMonthYear.equals(monthYear));
             if(textMonthYear.equals(monthYear)){
                 break;
             }
-            else {
-                WebElement nextButton = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[2]/div/div/div[2]/div[2]/div[2]"));
-                nextButton.click();
-            }
+            WebElement nextButton = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[2]/div/div/div[2]/div[2]/div[2]"));
+            nextButton.click();
+            Thread.sleep(1000);
         }
         WebElement selectDate = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[2]/div/div/div[2]/div[1]/div/div[2]/div[33]/span"));
         selectDate.click();
