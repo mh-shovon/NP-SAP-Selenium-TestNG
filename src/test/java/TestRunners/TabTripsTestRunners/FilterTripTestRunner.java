@@ -82,8 +82,11 @@ public class FilterTripTestRunner extends Setup {
     public void testFilterTripWithOperatorAndDate() throws InterruptedException {
         filterTrips = new FilterTrips(driver);
         filterTrips.filterTripWithOperatorAndDate();
-        List<WebElement> editButtonDisplayed = driver.findElements(By.className("corporate-blue-icon-btn"));
-        editButtonDisplayed.get(0).isDisplayed();
+//        List<WebElement> editButtonDisplayed = driver.findElements(By.className("corporate-blue-icon-btn"));
+//        editButtonDisplayed.get(0).isDisplayed();
+        String messageDisplayedActual = driver.findElement(By.xpath("//span[contains(text(),'No data found!')]")).getText();
+        String messageDisplayedExpected = "No data found!";
+        Assert.assertEquals(messageDisplayedActual, messageDisplayedExpected);
         Thread.sleep(2000);
     }
 }

@@ -149,23 +149,24 @@ public class FilterTrips extends Setup {
         WebElement dateField = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[1]"));
         dateField.click();
         Thread.sleep(1000);
-        String monthYear = "July 2024";
+        String monthYear = "August 2024";
+        String day = "21";
         while (true) {
             String textMonthYear = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[2]/div/div/div[2]/div[1]/div/div[1]/div")).getText();
-
             System.out.println("textMonthYear: " + textMonthYear + " logic: " + textMonthYear.equals(monthYear));
             if(textMonthYear.equals(monthYear)){
                 break;
             }
-            WebElement nextButton = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[2]/div/div/div[2]/div[2]/div[2]"));
-            nextButton.click();
-            Thread.sleep(1000);
+            else {
+                WebElement nextButton = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[2]/div/div/div[2]/div[2]/div[2]"));
+                nextButton.click();
+                Thread.sleep(1000);
+            }
         }
-        WebElement selectDate = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[2]/div[2]/div[1]/form/div/div[6]/div/div[2]/div/div/div[2]/div[1]/div/div[2]/div[33]/span"));
+        WebElement selectDate = driver.findElement(By.xpath("//span[contains(text(), '15')]"));
         selectDate.click();
         Thread.sleep(1000);
         searchButton.click();
         Thread.sleep(1000);
     }
-
 }
