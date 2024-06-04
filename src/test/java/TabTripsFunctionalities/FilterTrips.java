@@ -138,7 +138,6 @@ public class FilterTrips extends Setup {
         Thread.sleep(1000);
     }
 
-
     public void filterTripWithOperatorAndDate() throws InterruptedException {
         tripsTab.click();
         Thread.sleep(1000);
