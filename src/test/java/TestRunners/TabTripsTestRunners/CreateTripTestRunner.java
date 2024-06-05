@@ -17,6 +17,7 @@ public class CreateTripTestRunner extends Setup {
         String logoutButtonHeaderActual = driver.findElement(By.xpath("//button[normalize-space()='Logout']")).getText();
         String logoutButtonHeaderExpected = "Logout";
         Assert.assertEquals(logoutButtonHeaderActual, logoutButtonHeaderExpected);
+        System.out.println("User Login Successful");
     }
 
     CreateTrip createTrip;
