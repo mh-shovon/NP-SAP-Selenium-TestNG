@@ -26,5 +26,10 @@ public class CreateTripTestRunner extends Setup {
         createTrip = new CreateTrip(driver);
         createTrip.createNewTrip();
         Thread.sleep(500);
+        String createTripSuccessfullyActualMessage = driver.findElement(By.xpath("//div[@class='mosha__toast__content__text']")).getText();
+        String createTripSuccessfullyExpectedMessage = "Success";
+        Assert.assertEquals(createTripSuccessfullyActualMessage, createTripSuccessfullyExpectedMessage);
+        Thread.sleep(1000);
+        System.out.println("Trip created successfully");
     }
 }
